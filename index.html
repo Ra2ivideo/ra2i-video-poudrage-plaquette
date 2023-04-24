@@ -11,9 +11,11 @@
       const pinInput = document.getElementById("pinInput").value;
       const correctPin = "2005";
       const driveLink = document.getElementById("driveLink");
+      const pinForm = document.getElementById("pinForm");
 
       if (pinInput === correctPin) {
         driveLink.style.display = "block";
+        pinForm.style.display = "none";
       } else {
         alert("Code PIN incorrect. Veuillez réessayer.");
       }
@@ -22,12 +24,13 @@
 </head>
 <body>
   <h1>Accès à la vidéo</h1>
-  <p>Veuillez saisir le code PIN pour accéder à la vidéo :</p>
-  <input type="password" id="pinInput" maxlength="4">
-  <button onclick="checkPin()">Valider</button>
+  <div id="pinForm">
+    <p>Veuillez saisir le code PIN pour accéder à la vidéo :</p>
+    <input type="password" id="pinInput" maxlength="4">
+    <button onclick="checkPin()">Valider</button>
+  </div>
   <div id="driveLink">
-    <p>La vidéo est disponible :</p>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/ovrQFSG4Wpo?controls=0&modestbranding=1&rel=0&showinfo=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/ovrQFSG4Wpo?controls=0&modestbranding=1&rel=0&showinfo=0&autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
   </div>
 </body>
 </html>
