@@ -1,33 +1,36 @@
 <!DOCTYPE html>
 <html>
 <head>
-<style>
-  #driveLink {
-    display: none;
-  }
-</style>
-<script>
-  function checkPin() {
-    const pinInput = document.getElementById("pinInput").value;
-    const correctPin = "2005";
-    const driveLink = document.getElementById("driveLink");
-
-    if (pinInput === correctPin) {
-      driveLink.style.display = "block";
-    } else {
-      alert("Code PIN incorrect. Veuillez réessayer.");
+  <style>
+    #driveLink {
+      display: none;
     }
-  }
-</script>
+    iframe {
+      pointer-events: none;
+    }
+  </style>
+  <script>
+    function checkPin() {
+      const pinInput = document.getElementById("pinInput").value;
+      const correctPin = "2005";
+      const driveLink = document.getElementById("driveLink");
+
+      if (pinInput === correctPin) {
+        driveLink.style.display = "block";
+      } else {
+        alert("Code PIN incorrect. Veuillez réessayer.");
+      }
+    }
+  </script>
 </head>
 <body>
-  <h1>Accès au lien Google Drive</h1>
-  <p>Veuillez saisir le code PIN pour accéder au lien :</p>
+  <h1>Accès à la vidéo</h1>
+  <p>Veuillez saisir le code PIN pour accéder à la vidéo :</p>
   <input type="password" id="pinInput" maxlength="4">
   <button onclick="checkPin()">Valider</button>
   <div id="driveLink">
-    <p>Lien Google Drive :</p>
-    <a href="https://drive.google.com/file/d/1qMw7iTEi8grDphSg2OxeOpXAIdYEU4Q4/view?usp=sharing" target="_blank">Cliquez ici pour accéder au fichier</a>
+    <p>La vidéo est disponible :</p>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/ovrQFSG4Wpo?controls=0&modestbranding=1&rel=0&showinfo=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
   </div>
 </body>
 </html>
