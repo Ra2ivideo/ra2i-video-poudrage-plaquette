@@ -4,6 +4,22 @@
   <style>
     #driveLink {
       display: none;
+      pointer-events: none;
+    }
+
+    #videoContainer {
+      position: relative;
+      overflow: hidden;
+      width: 560px;
+      height: 315px;
+    }
+
+    #videoIframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
     }
   </style>
   <script>
@@ -30,7 +46,9 @@
     <button onclick="checkPin()">Valider</button>
   </div>
   <div id="driveLink">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/ovrQFSG4Wpo?rel=0&modestbranding=1&autoplay=0&mute=1&playsinline=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen sandbox></iframe>
+    <div id="videoContainer">
+      <iframe id="videoIframe" src="https://www.youtube.com/embed/ovrQFSG4Wpo?rel=0&modestbranding=1&autoplay=0&mute=1&playsinline=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen sandbox></iframe>
+    </div>
   </div>
 </body>
 </html>
