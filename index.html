@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accès à la vidéo</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.8/clipboard.min.js"></script>
   <style>
     #driveLink {
       display: none;
@@ -28,11 +32,21 @@
       padding: 0;
       margin: 0;
     }
-
-    #videoIframe[src^="https://www.canva.com/design/"] + a {
-      display: none;
-    }
   </style>
+</head>
+<body>
+  <h1>Accès à la vidéo</h1>
+  <div id="pinForm">
+    <p>Veuillez saisir le code PIN pour accéder à la vidéo :</p>
+    <input type="password" id="pinInput" maxlength="4">
+    <button onclick="checkPin()">Valider</button>
+  </div>
+  <div id="driveLink">
+    <div id="videoContainer">
+      <iframe id="videoIframe" src="https://www.canva.com/design/DAFhB4ZFcIw/watch?embed" title="Canva Design" sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-presentation allow-same-origin allow-scripts" allowfullscreen="allowfullscreen" allow="fullscreen"></iframe>
+    </div>
+  </div>
+
   <script>
     function checkPin() {
       const pinInput = document.getElementById("pinInput").value;
@@ -47,19 +61,12 @@
         alert("Code PIN incorrect. Veuillez réessayer.");
       }
     }
+
+    var videoIframe = document.getElementById('videoIframe');
+    var clipboard = new ClipboardJS(videoIframe);
+    clipboard.on('success', function(e) {
+      e.clearSelection();
+    });
   </script>
-</head>
-<body>
-  <h1>Accès à la vidéo</h1>
-  <div id="pinForm">
-    <p>Veuillez saisir le code PIN pour accéder à la vidéo :</p>
-    <input type="password" id="pinInput" maxlength="4">
-    <button onclick="checkPin()">Valider</button>
-  </div>
-  <div id="driveLink">
-    <div id="videoContainer">
-      <iframe id="videoIframe" src="https://www.canva.com/design/DAFhB4ZFcIw/watch?embed" title="Canva Design" sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-presentation allow-same-origin allow-scripts" allowfullscreen="allowfullscreen" allow="fullscreen"></iframe>
-    </div>
-  </div>
 </body>
 </html>
