@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  #driveLink {
+    display: none;
+  }
+</style>
+<script>
+  function checkPin() {
+    const pinInput = document.getElementById("pinInput").value;
+    const correctPin = "2005";
+    const driveLink = document.getElementById("driveLink");
+
+    if (pinInput === correctPin) {
+      driveLink.style.display = "block";
+    } else {
+      alert("Code PIN incorrect. Veuillez réessayer.");
+    }
+  }
+</script>
+</head>
+<body>
+  <h1>Accès au lien Google Drive</h1>
+  <p>Veuillez saisir le code PIN pour accéder au lien :</p>
+  <input type="password" id="pinInput" maxlength="4">
+  <button onclick="checkPin()">Valider</button>
+  <div id="driveLink">
+    <p>Lien Google Drive :</p>
+    <a href="https://drive.google.com/file/d/1qMw7iTEi8grDphSg2OxeOpXAIdYEU4Q4/view?usp=sharing" target="_blank">Cliquez ici pour accéder au fichier</a>
+  </div>
+</body>
+</html>
