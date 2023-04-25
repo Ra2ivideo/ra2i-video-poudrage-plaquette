@@ -50,6 +50,16 @@
     function disableRightClick(e) {
       e.preventDefault();
     }
+
+    function toggleVideoPlayback() {
+      const videoIframe = document.getElementById("videoIframe");
+      const video = videoIframe.contentWindow.document.querySelector("video");
+      if (video.paused) {
+        video.play();
+      } else {
+        video.pause();
+      }
+    }
   </script>
 </head>
 <body>
@@ -63,7 +73,7 @@
     <div id="videoContainer">
       <iframe loading="lazy" id="videoIframe" allowfullscreen="allowfullscreen" allow="fullscreen">
       </iframe>
-      <div id="noRightClick" oncontextmenu="disableRightClick(event);"></div>
+      <div id="noRightClick" oncontextmenu="disableRightClick(event);" onclick="toggleVideoPlayback();"></div>
     </div>
   </div>
 
