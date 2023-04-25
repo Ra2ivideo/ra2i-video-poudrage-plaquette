@@ -61,7 +61,7 @@
   </div>
   <div id="driveLink">
     <div id="videoContainer">
-      <iframe loading="lazy" id="videoIframe" src="https://www.canva.com/design/DAFhHsHJ8-o/watch?embed" allowfullscreen="allowfullscreen" allow="fullscreen">
+      <iframe loading="lazy" id="videoIframe" allowfullscreen="allowfullscreen" allow="fullscreen">
       </iframe>
       <div id="noRightClick" oncontextmenu="disableRightClick(event);"></div>
     </div>
@@ -75,6 +75,8 @@
       const pinForm = document.getElementById("pinForm");
 
       if (pinInput === correctPin) {
+        const videoIframe = document.getElementById("videoIframe");
+        videoIframe.src = "https://www.canva.com/design/DAFhHsHJ8-o/watch?embed";
         driveLink.style.display = "block";
         pinForm.style.display = "none";
       } else {
